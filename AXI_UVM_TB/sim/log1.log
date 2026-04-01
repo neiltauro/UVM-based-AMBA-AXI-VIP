@@ -1,0 +1,237 @@
+# vsim -cvgperinstance -vopt -voptargs="+acc" -coverage -sva -sv_seed random work.top -wlf single_write.wlf -l log1.log -c -do "log -r /*; coverage save -onexit cov1; run -all; exit" "+UVM_TESTNAME=single_write_test" 
+# Start time: 16:12:36 on Mar 31,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.axi(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.Axi_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading work.axi(fast__2)
+# Loading /pkgs/mentor/questa/2024.2/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+# Sv_Seed = 791328117
+# log -r /*
+#  coverage save -onexit cov1
+#  run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test single_write_test...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               single_write_test           -     @474 
+#   envh                     env                         -     @498 
+#     m_agenth               master_agent                -     @506 
+#       drvh                 master_driver               -     @660 
+#         rsp_port           uvm_analysis_port           -     @675 
+#         seq_item_port      uvm_seq_item_pull_port      -     @667 
+#       monh                 master_monitor              -     @637 
+#         analysis_port_rd   uvm_analysis_port           -     @652 
+#         analysis_port_wr   uvm_analysis_port           -     @644 
+#       seqrh                master_sequencer            -     @683 
+#         rsp_export         uvm_analysis_export         -     @690 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @784 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     s_agenth               slave_agent                 -     @513 
+#       drvh                 slave_driver                -     @824 
+#         rsp_port           uvm_analysis_port           -     @839 
+#         seq_item_port      uvm_seq_item_pull_port      -     @831 
+#       monh                 slave_monitor               -     @801 
+#         analysis_port_rd   uvm_analysis_port           -     @816 
+#         analysis_port_wr   uvm_analysis_port           -     @808 
+#       seqrh                slave_sequencer             -     @847 
+#         rsp_export         uvm_analysis_export         -     @854 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @948 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     sb                     score_board                 -     @520 
+#       m_rd_fifo            uvm_tlm_analysis_fifo #(T)  -     @1058
+#         analysis_export    uvm_analysis_imp            -     @1097
+#         get_ap             uvm_analysis_port           -     @1089
+#         get_peek_export    uvm_get_peek_imp            -     @1073
+#         put_ap             uvm_analysis_port           -     @1081
+#         put_export         uvm_put_imp                 -     @1065
+#       m_wr_fifo            uvm_tlm_analysis_fifo #(T)  -     @964 
+#         analysis_export    uvm_analysis_imp            -     @1003
+#         get_ap             uvm_analysis_port           -     @995 
+#         get_peek_export    uvm_get_peek_imp            -     @979 
+#         put_ap             uvm_analysis_port           -     @987 
+#         put_export         uvm_put_imp                 -     @971 
+#       s_rd_fifo            uvm_tlm_analysis_fifo #(T)  -     @1105
+#         analysis_export    uvm_analysis_imp            -     @1144
+#         get_ap             uvm_analysis_port           -     @1136
+#         get_peek_export    uvm_get_peek_imp            -     @1120
+#         put_ap             uvm_analysis_port           -     @1128
+#         put_export         uvm_put_imp                 -     @1112
+#       s_wr_fifo            uvm_tlm_analysis_fifo #(T)  -     @1011
+#         analysis_export    uvm_analysis_imp            -     @1050
+#         get_ap             uvm_analysis_port           -     @1042
+#         get_peek_export    uvm_get_peek_imp            -     @1026
+#         put_ap             uvm_analysis_port           -     @1034
+#         put_export         uvm_put_imp                 -     @1018
+#     seqrh                  virtual_sequencer           -     @527 
+#       m_seqrh              master_sequencer            -     @1153
+#         rsp_export         uvm_analysis_export         -     @1160
+#         seq_item_export    uvm_seq_item_pull_imp       -     @1254
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#       rsp_export           uvm_analysis_export         -     @534 
+#       s_seqrh              slave_sequencer             -     @1262
+#         rsp_export         uvm_analysis_export         -     @1269
+#         seq_item_export    uvm_seq_item_pull_imp       -     @1363
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#       seq_item_export      uvm_seq_item_pull_imp       -     @628 
+#       arbitration_queue    array                       0     -    
+#       lock_queue           array                       0     -    
+#       num_last_reqs        integral                    32    'd1  
+#       num_last_rsps        integral                    32    'd1  
+# ------------------------------------------------------------------
+# 
+# UVM_INFO ../master_uvc/master_sequence.sv(66) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [single_write_seq] SINGLE_WRITE: AWID=0 AWADDR=0x000067d1
+# UVM_INFO ../master_uvc/master_sequence.sv(66) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [single_write_seq] SINGLE_WRITE: AWID=1 AWADDR=0x00006097
+# UVM_INFO ../master_uvc/master_sequence.sv(66) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [single_write_seq] SINGLE_WRITE: AWID=2 AWADDR=0x00004beb
+# UVM_INFO ../master_uvc/master_sequence.sv(66) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [single_write_seq] SINGLE_WRITE: AWID=3 AWADDR=0x00009b9a
+# UVM_INFO ../master_uvc/master_sequence.sv(66) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [single_write_seq] SINGLE_WRITE: AWID=4 AWADDR=0x000075e7
+# UVM_INFO ../master_uvc/master_sequence.sv(66) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [single_write_seq] SINGLE_WRITE: AWID=5 AWADDR=0x00002ec7
+# UVM_INFO ../master_uvc/master_sequence.sv(66) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [single_write_seq] SINGLE_WRITE: AWID=6 AWADDR=0x0000dc8f
+# UVM_INFO ../master_uvc/master_sequence.sv(66) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [single_write_seq] SINGLE_WRITE: AWID=7 AWADDR=0x000014f9
+# UVM_INFO ../master_uvc/master_sequence.sv(66) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [single_write_seq] SINGLE_WRITE: AWID=8 AWADDR=0x00004de5
+# UVM_INFO ../master_uvc/master_sequence.sv(66) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [single_write_seq] SINGLE_WRITE: AWID=9 AWADDR=0x0000a5cc
+# UVM_INFO ../test/virtual_sequence.sv(50) @ 0: uvm_test_top.envh.seqrh@@seq [single_write_v_seq] single_write_v_seq completed
+# UVM_INFO ../master_uvc/master_driver.sv(250) @ 105: uvm_test_top.envh.m_agenth.drvh [master_driver] WR COMPLETE: AWID=0 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(151) @ 105: uvm_test_top.envh.m_agenth.monh [master_monitor] MON WR_RESP: AWID=0 BRESP=0
+# UVM_INFO ../slave_uvc/slave_monitor.sv(131) @ 105: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON WR_RESP: AWID=0 BRESP=0
+# UVM_INFO ../tb/score_board.sv(107) @ 105: uvm_test_top.envh.sb [score_board] WRITE compare: AWID=0 AWADDR=0x000067d1 AWBURST=1 AWLEN=0
+# UVM_INFO ../tb/score_board.sv(118) @ 105: uvm_test_top.envh.sb [score_board] WRITE MATCH: AWID=0 AWADDR=0x000067d1 AWBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(250) @ 185: uvm_test_top.envh.m_agenth.drvh [master_driver] WR COMPLETE: AWID=1 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(151) @ 185: uvm_test_top.envh.m_agenth.monh [master_monitor] MON WR_RESP: AWID=1 BRESP=0
+# UVM_INFO ../slave_uvc/slave_monitor.sv(131) @ 185: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON WR_RESP: AWID=1 BRESP=0
+# UVM_INFO ../tb/score_board.sv(107) @ 185: uvm_test_top.envh.sb [score_board] WRITE compare: AWID=1 AWADDR=0x00006097 AWBURST=1 AWLEN=0
+# UVM_INFO ../tb/score_board.sv(118) @ 185: uvm_test_top.envh.sb [score_board] WRITE MATCH: AWID=1 AWADDR=0x00006097 AWBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(250) @ 215: uvm_test_top.envh.m_agenth.drvh [master_driver] WR COMPLETE: AWID=2 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(151) @ 215: uvm_test_top.envh.m_agenth.monh [master_monitor] MON WR_RESP: AWID=2 BRESP=0
+# UVM_INFO ../slave_uvc/slave_monitor.sv(131) @ 215: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON WR_RESP: AWID=2 BRESP=0
+# UVM_INFO ../tb/score_board.sv(107) @ 215: uvm_test_top.envh.sb [score_board] WRITE compare: AWID=2 AWADDR=0x00004beb AWBURST=1 AWLEN=0
+# UVM_INFO ../tb/score_board.sv(118) @ 215: uvm_test_top.envh.sb [score_board] WRITE MATCH: AWID=2 AWADDR=0x00004beb AWBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(250) @ 285: uvm_test_top.envh.m_agenth.drvh [master_driver] WR COMPLETE: AWID=3 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(151) @ 285: uvm_test_top.envh.m_agenth.monh [master_monitor] MON WR_RESP: AWID=3 BRESP=0
+# UVM_INFO ../slave_uvc/slave_monitor.sv(131) @ 285: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON WR_RESP: AWID=3 BRESP=0
+# UVM_INFO ../tb/score_board.sv(107) @ 285: uvm_test_top.envh.sb [score_board] WRITE compare: AWID=3 AWADDR=0x00009b9a AWBURST=1 AWLEN=0
+# UVM_INFO ../tb/score_board.sv(118) @ 285: uvm_test_top.envh.sb [score_board] WRITE MATCH: AWID=3 AWADDR=0x00009b9a AWBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(250) @ 315: uvm_test_top.envh.m_agenth.drvh [master_driver] WR COMPLETE: AWID=4 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(151) @ 315: uvm_test_top.envh.m_agenth.monh [master_monitor] MON WR_RESP: AWID=4 BRESP=0
+# UVM_INFO ../slave_uvc/slave_monitor.sv(131) @ 315: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON WR_RESP: AWID=4 BRESP=0
+# UVM_INFO ../tb/score_board.sv(107) @ 315: uvm_test_top.envh.sb [score_board] WRITE compare: AWID=4 AWADDR=0x000075e7 AWBURST=1 AWLEN=0
+# UVM_INFO ../tb/score_board.sv(118) @ 315: uvm_test_top.envh.sb [score_board] WRITE MATCH: AWID=4 AWADDR=0x000075e7 AWBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(250) @ 385: uvm_test_top.envh.m_agenth.drvh [master_driver] WR COMPLETE: AWID=5 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(151) @ 385: uvm_test_top.envh.m_agenth.monh [master_monitor] MON WR_RESP: AWID=5 BRESP=0
+# UVM_INFO ../slave_uvc/slave_monitor.sv(131) @ 385: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON WR_RESP: AWID=5 BRESP=0
+# UVM_INFO ../tb/score_board.sv(107) @ 385: uvm_test_top.envh.sb [score_board] WRITE compare: AWID=5 AWADDR=0x00002ec7 AWBURST=1 AWLEN=0
+# UVM_INFO ../tb/score_board.sv(118) @ 385: uvm_test_top.envh.sb [score_board] WRITE MATCH: AWID=5 AWADDR=0x00002ec7 AWBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(250) @ 475: uvm_test_top.envh.m_agenth.drvh [master_driver] WR COMPLETE: AWID=6 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(151) @ 475: uvm_test_top.envh.m_agenth.monh [master_monitor] MON WR_RESP: AWID=6 BRESP=0
+# UVM_INFO ../slave_uvc/slave_monitor.sv(131) @ 475: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON WR_RESP: AWID=6 BRESP=0
+# UVM_INFO ../tb/score_board.sv(107) @ 475: uvm_test_top.envh.sb [score_board] WRITE compare: AWID=6 AWADDR=0x0000dc8f AWBURST=1 AWLEN=0
+# UVM_INFO ../tb/score_board.sv(118) @ 475: uvm_test_top.envh.sb [score_board] WRITE MATCH: AWID=6 AWADDR=0x0000dc8f AWBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(250) @ 495: uvm_test_top.envh.m_agenth.drvh [master_driver] WR COMPLETE: AWID=7 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(151) @ 495: uvm_test_top.envh.m_agenth.monh [master_monitor] MON WR_RESP: AWID=7 BRESP=0
+# UVM_INFO ../slave_uvc/slave_monitor.sv(131) @ 495: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON WR_RESP: AWID=7 BRESP=0
+# UVM_INFO ../tb/score_board.sv(107) @ 495: uvm_test_top.envh.sb [score_board] WRITE compare: AWID=7 AWADDR=0x000014f9 AWBURST=1 AWLEN=0
+# UVM_INFO ../tb/score_board.sv(118) @ 495: uvm_test_top.envh.sb [score_board] WRITE MATCH: AWID=7 AWADDR=0x000014f9 AWBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(250) @ 515: uvm_test_top.envh.m_agenth.drvh [master_driver] WR COMPLETE: AWID=8 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(151) @ 515: uvm_test_top.envh.m_agenth.monh [master_monitor] MON WR_RESP: AWID=8 BRESP=0
+# UVM_INFO ../slave_uvc/slave_monitor.sv(131) @ 515: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON WR_RESP: AWID=8 BRESP=0
+# UVM_INFO ../tb/score_board.sv(107) @ 515: uvm_test_top.envh.sb [score_board] WRITE compare: AWID=8 AWADDR=0x00004de5 AWBURST=1 AWLEN=0
+# UVM_INFO ../tb/score_board.sv(118) @ 515: uvm_test_top.envh.sb [score_board] WRITE MATCH: AWID=8 AWADDR=0x00004de5 AWBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(250) @ 585: uvm_test_top.envh.m_agenth.drvh [master_driver] WR COMPLETE: AWID=9 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(151) @ 585: uvm_test_top.envh.m_agenth.monh [master_monitor] MON WR_RESP: AWID=9 BRESP=0
+# UVM_INFO ../slave_uvc/slave_monitor.sv(131) @ 585: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON WR_RESP: AWID=9 BRESP=0
+# UVM_INFO ../tb/score_board.sv(107) @ 585: uvm_test_top.envh.sb [score_board] WRITE compare: AWID=9 AWADDR=0x0000a5cc AWBURST=1 AWLEN=0
+# UVM_INFO ../tb/score_board.sv(118) @ 585: uvm_test_top.envh.sb [score_board] WRITE MATCH: AWID=9 AWADDR=0x0000a5cc AWBURST=1
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 6995: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../tb/score_board.sv(197) @ 6995: uvm_test_top.envh.sb [score_board] 
+# 
+# ============================================
+#   AXI VIP SCOREBOARD REPORT
+# ============================================
+#   Write seen      : 10
+#   Write matched   : 10
+#   Write mismatched: 0
+# --------------------------------------------
+#   Read  seen      : 0
+#   Read  matched   : 0
+#   Read  mismatched: 0
+# ============================================
+# 
+# 
+# UVM_INFO ../tb/score_board.sv(215) @ 6995: uvm_test_top.envh.sb [score_board] TEST PASSED – all transactions matched
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   68
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# [master_driver]    10
+# [master_monitor]    10
+# [score_board]    22
+# [single_write_seq]    10
+# [single_write_v_seq]     1
+# [slave_monitor]    10
+# ** Note: $finish    : /pkgs/mentor/questa/2024.2/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 6995 ns  Iteration: 55  Instance: /top
+# Saving coverage database on exit...
+# End time: 16:12:39 on Mar 31,2026, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1
