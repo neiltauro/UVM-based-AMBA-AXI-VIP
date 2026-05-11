@@ -1,0 +1,237 @@
+# vsim -cvgperinstance -vopt -voptargs="+acc" -coverage -sva -sv_seed random work.top -wlf out_read.wlf -l log7.log -c -do "log -r /*; coverage save -onexit cov7; run -all; exit" "+UVM_TESTNAME=outstanding_read_test" 
+# Start time: 23:56:47 on Mar 30,2026
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.axi(fast)
+# Loading mtiUvm.uvm_pkg(fast)
+# Loading work.Axi_pkg(fast)
+# Loading mtiUvm.questa_uvm_pkg(fast)
+# Loading work.top(fast)
+# Loading work.axi(fast__2)
+# Loading /pkgs/mentor/questa/2024.2/questasim/uvm-1.1d/linux_x86_64/uvm_dpi.so
+# ** Warning: (vsim-8634) Code was not compiled with coverage options.
+# Sv_Seed = 3972944722
+# log -r /*
+#  coverage save -onexit cov7
+#  run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(277) @ 0: reporter [Questa UVM] QUESTA_UVM-1.2.3
+# UVM_INFO verilog_src/questa_uvm_pkg-1.2/src/questa_uvm_pkg.sv(278) @ 0: reporter [Questa UVM]  questa_uvm::init(+struct)
+# UVM_INFO @ 0: reporter [RNTST] Running test outstanding_read_test...
+# UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
+# ------------------------------------------------------------------
+# Name                       Type                        Size  Value
+# ------------------------------------------------------------------
+# uvm_test_top               outstanding_read_test       -     @474 
+#   envh                     env                         -     @498 
+#     m_agenth               master_agent                -     @506 
+#       drvh                 master_driver               -     @660 
+#         rsp_port           uvm_analysis_port           -     @675 
+#         seq_item_port      uvm_seq_item_pull_port      -     @667 
+#       monh                 master_monitor              -     @637 
+#         analysis_port_rd   uvm_analysis_port           -     @652 
+#         analysis_port_wr   uvm_analysis_port           -     @644 
+#       seqrh                master_sequencer            -     @683 
+#         rsp_export         uvm_analysis_export         -     @690 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @784 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     s_agenth               slave_agent                 -     @513 
+#       drvh                 slave_driver                -     @824 
+#         rsp_port           uvm_analysis_port           -     @839 
+#         seq_item_port      uvm_seq_item_pull_port      -     @831 
+#       monh                 slave_monitor               -     @801 
+#         analysis_port_rd   uvm_analysis_port           -     @816 
+#         analysis_port_wr   uvm_analysis_port           -     @808 
+#       seqrh                slave_sequencer             -     @847 
+#         rsp_export         uvm_analysis_export         -     @854 
+#         seq_item_export    uvm_seq_item_pull_imp       -     @948 
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#     sb                     score_board                 -     @520 
+#       m_rd_fifo            uvm_tlm_analysis_fifo #(T)  -     @1058
+#         analysis_export    uvm_analysis_imp            -     @1097
+#         get_ap             uvm_analysis_port           -     @1089
+#         get_peek_export    uvm_get_peek_imp            -     @1073
+#         put_ap             uvm_analysis_port           -     @1081
+#         put_export         uvm_put_imp                 -     @1065
+#       m_wr_fifo            uvm_tlm_analysis_fifo #(T)  -     @964 
+#         analysis_export    uvm_analysis_imp            -     @1003
+#         get_ap             uvm_analysis_port           -     @995 
+#         get_peek_export    uvm_get_peek_imp            -     @979 
+#         put_ap             uvm_analysis_port           -     @987 
+#         put_export         uvm_put_imp                 -     @971 
+#       s_rd_fifo            uvm_tlm_analysis_fifo #(T)  -     @1105
+#         analysis_export    uvm_analysis_imp            -     @1144
+#         get_ap             uvm_analysis_port           -     @1136
+#         get_peek_export    uvm_get_peek_imp            -     @1120
+#         put_ap             uvm_analysis_port           -     @1128
+#         put_export         uvm_put_imp                 -     @1112
+#       s_wr_fifo            uvm_tlm_analysis_fifo #(T)  -     @1011
+#         analysis_export    uvm_analysis_imp            -     @1050
+#         get_ap             uvm_analysis_port           -     @1042
+#         get_peek_export    uvm_get_peek_imp            -     @1026
+#         put_ap             uvm_analysis_port           -     @1034
+#         put_export         uvm_put_imp                 -     @1018
+#     seqrh                  virtual_sequencer           -     @527 
+#       m_seqrh              master_sequencer            -     @1153
+#         rsp_export         uvm_analysis_export         -     @1160
+#         seq_item_export    uvm_seq_item_pull_imp       -     @1254
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#       rsp_export           uvm_analysis_export         -     @534 
+#       s_seqrh              slave_sequencer             -     @1262
+#         rsp_export         uvm_analysis_export         -     @1269
+#         seq_item_export    uvm_seq_item_pull_imp       -     @1363
+#         arbitration_queue  array                       0     -    
+#         lock_queue         array                       0     -    
+#         num_last_reqs      integral                    32    'd1  
+#         num_last_rsps      integral                    32    'd1  
+#       seq_item_export      uvm_seq_item_pull_imp       -     @628 
+#       arbitration_queue    array                       0     -    
+#       lock_queue           array                       0     -    
+#       num_last_reqs        integral                    32    'd1  
+#       num_last_rsps        integral                    32    'd1  
+# ------------------------------------------------------------------
+# 
+# UVM_INFO ../master_uvc/master_sequence.sv(314) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [outstanding_read_seq] OUTSTANDING_RD[0]: ARID=0 ARADDR=0x0000df86 ARLEN=7 ARBURST=2
+# UVM_INFO ../master_uvc/master_sequence.sv(314) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [outstanding_read_seq] OUTSTANDING_RD[1]: ARID=1 ARADDR=0x00005eb8 ARLEN=7 ARBURST=0
+# UVM_INFO ../master_uvc/master_sequence.sv(314) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [outstanding_read_seq] OUTSTANDING_RD[2]: ARID=2 ARADDR=0x0000d9dc ARLEN=1 ARBURST=2
+# UVM_INFO ../master_uvc/master_sequence.sv(314) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [outstanding_read_seq] OUTSTANDING_RD[3]: ARID=3 ARADDR=0x0000aa99 ARLEN=6 ARBURST=1
+# UVM_INFO ../master_uvc/master_sequence.sv(314) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [outstanding_read_seq] OUTSTANDING_RD[4]: ARID=4 ARADDR=0x0000d5d3 ARLEN=5 ARBURST=1
+# UVM_INFO ../master_uvc/master_sequence.sv(314) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [outstanding_read_seq] OUTSTANDING_RD[5]: ARID=5 ARADDR=0x00000059 ARLEN=2 ARBURST=0
+# UVM_INFO ../master_uvc/master_sequence.sv(314) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [outstanding_read_seq] OUTSTANDING_RD[6]: ARID=6 ARADDR=0x000033cb ARLEN=3 ARBURST=2
+# UVM_INFO ../master_uvc/master_sequence.sv(314) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [outstanding_read_seq] OUTSTANDING_RD[7]: ARID=7 ARADDR=0x00006800 ARLEN=2 ARBURST=1
+# UVM_INFO ../master_uvc/master_sequence.sv(314) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [outstanding_read_seq] OUTSTANDING_RD[8]: ARID=8 ARADDR=0x0000f4b4 ARLEN=4 ARBURST=0
+# UVM_INFO ../master_uvc/master_sequence.sv(314) @ 0: uvm_test_top.envh.m_agenth.seqrh@@seq [outstanding_read_seq] OUTSTANDING_RD[9]: ARID=9 ARADDR=0x00001fa3 ARLEN=6 ARBURST=1
+# UVM_INFO ../test/virtual_sequence.sv(170) @ 0: uvm_test_top.envh.seqrh@@seq [outstanding_read_v_seq] outstanding_read_v_seq completed
+# UVM_INFO ../master_uvc/master_driver.sv(285) @ 295: uvm_test_top.envh.m_agenth.drvh [master_driver] RD COMPLETE: ARID=0 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(230) @ 295: uvm_test_top.envh.m_agenth.monh [master_monitor] MON RD_DATA: ARID=0 beats=8
+# UVM_INFO ../slave_uvc/slave_monitor.sv(199) @ 295: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON RD_DATA: ARID=0 beats=8
+# UVM_INFO ../tb/score_board.sv(138) @ 295: uvm_test_top.envh.sb [score_board] READ  compare: ARID=0 ARADDR=0x0000df86 ARBURST=2 ARLEN=7
+# UVM_INFO ../tb/score_board.sv(149) @ 295: uvm_test_top.envh.sb [score_board] READ  MATCH: ARID=0 ARADDR=0x0000df86 ARBURST=2
+# UVM_INFO ../master_uvc/master_driver.sv(285) @ 585: uvm_test_top.envh.m_agenth.drvh [master_driver] RD COMPLETE: ARID=1 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(230) @ 585: uvm_test_top.envh.m_agenth.monh [master_monitor] MON RD_DATA: ARID=1 beats=8
+# UVM_INFO ../slave_uvc/slave_monitor.sv(199) @ 585: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON RD_DATA: ARID=1 beats=8
+# UVM_INFO ../tb/score_board.sv(138) @ 585: uvm_test_top.envh.sb [score_board] READ  compare: ARID=1 ARADDR=0x00005eb8 ARBURST=0 ARLEN=7
+# UVM_INFO ../tb/score_board.sv(149) @ 585: uvm_test_top.envh.sb [score_board] READ  MATCH: ARID=1 ARADDR=0x00005eb8 ARBURST=0
+# UVM_INFO ../master_uvc/master_driver.sv(285) @ 675: uvm_test_top.envh.m_agenth.drvh [master_driver] RD COMPLETE: ARID=2 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(230) @ 675: uvm_test_top.envh.m_agenth.monh [master_monitor] MON RD_DATA: ARID=2 beats=2
+# UVM_INFO ../slave_uvc/slave_monitor.sv(199) @ 675: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON RD_DATA: ARID=2 beats=2
+# UVM_INFO ../tb/score_board.sv(138) @ 675: uvm_test_top.envh.sb [score_board] READ  compare: ARID=2 ARADDR=0x0000d9dc ARBURST=2 ARLEN=1
+# UVM_INFO ../tb/score_board.sv(149) @ 675: uvm_test_top.envh.sb [score_board] READ  MATCH: ARID=2 ARADDR=0x0000d9dc ARBURST=2
+# UVM_INFO ../master_uvc/master_driver.sv(285) @ 965: uvm_test_top.envh.m_agenth.drvh [master_driver] RD COMPLETE: ARID=3 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(230) @ 965: uvm_test_top.envh.m_agenth.monh [master_monitor] MON RD_DATA: ARID=3 beats=7
+# UVM_INFO ../slave_uvc/slave_monitor.sv(199) @ 965: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON RD_DATA: ARID=3 beats=7
+# UVM_INFO ../tb/score_board.sv(138) @ 965: uvm_test_top.envh.sb [score_board] READ  compare: ARID=3 ARADDR=0x0000aa99 ARBURST=1 ARLEN=6
+# UVM_INFO ../tb/score_board.sv(149) @ 965: uvm_test_top.envh.sb [score_board] READ  MATCH: ARID=3 ARADDR=0x0000aa99 ARBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(285) @ 1225: uvm_test_top.envh.m_agenth.drvh [master_driver] RD COMPLETE: ARID=4 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(230) @ 1225: uvm_test_top.envh.m_agenth.monh [master_monitor] MON RD_DATA: ARID=4 beats=6
+# UVM_INFO ../slave_uvc/slave_monitor.sv(199) @ 1225: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON RD_DATA: ARID=4 beats=6
+# UVM_INFO ../tb/score_board.sv(138) @ 1225: uvm_test_top.envh.sb [score_board] READ  compare: ARID=4 ARADDR=0x0000d5d3 ARBURST=1 ARLEN=5
+# UVM_INFO ../tb/score_board.sv(149) @ 1225: uvm_test_top.envh.sb [score_board] READ  MATCH: ARID=4 ARADDR=0x0000d5d3 ARBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(285) @ 1375: uvm_test_top.envh.m_agenth.drvh [master_driver] RD COMPLETE: ARID=5 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(230) @ 1375: uvm_test_top.envh.m_agenth.monh [master_monitor] MON RD_DATA: ARID=5 beats=3
+# UVM_INFO ../slave_uvc/slave_monitor.sv(199) @ 1375: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON RD_DATA: ARID=5 beats=3
+# UVM_INFO ../tb/score_board.sv(138) @ 1375: uvm_test_top.envh.sb [score_board] READ  compare: ARID=5 ARADDR=0x00000059 ARBURST=0 ARLEN=2
+# UVM_INFO ../tb/score_board.sv(149) @ 1375: uvm_test_top.envh.sb [score_board] READ  MATCH: ARID=5 ARADDR=0x00000059 ARBURST=0
+# UVM_INFO ../master_uvc/master_driver.sv(285) @ 1575: uvm_test_top.envh.m_agenth.drvh [master_driver] RD COMPLETE: ARID=6 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(230) @ 1575: uvm_test_top.envh.m_agenth.monh [master_monitor] MON RD_DATA: ARID=6 beats=4
+# UVM_INFO ../slave_uvc/slave_monitor.sv(199) @ 1575: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON RD_DATA: ARID=6 beats=4
+# UVM_INFO ../tb/score_board.sv(138) @ 1575: uvm_test_top.envh.sb [score_board] READ  compare: ARID=6 ARADDR=0x000033cb ARBURST=2 ARLEN=3
+# UVM_INFO ../tb/score_board.sv(149) @ 1575: uvm_test_top.envh.sb [score_board] READ  MATCH: ARID=6 ARADDR=0x000033cb ARBURST=2
+# UVM_INFO ../master_uvc/master_driver.sv(285) @ 1695: uvm_test_top.envh.m_agenth.drvh [master_driver] RD COMPLETE: ARID=7 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(230) @ 1695: uvm_test_top.envh.m_agenth.monh [master_monitor] MON RD_DATA: ARID=7 beats=3
+# UVM_INFO ../slave_uvc/slave_monitor.sv(199) @ 1695: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON RD_DATA: ARID=7 beats=3
+# UVM_INFO ../tb/score_board.sv(138) @ 1695: uvm_test_top.envh.sb [score_board] READ  compare: ARID=7 ARADDR=0x00006800 ARBURST=1 ARLEN=2
+# UVM_INFO ../tb/score_board.sv(149) @ 1695: uvm_test_top.envh.sb [score_board] READ  MATCH: ARID=7 ARADDR=0x00006800 ARBURST=1
+# UVM_INFO ../master_uvc/master_driver.sv(285) @ 1895: uvm_test_top.envh.m_agenth.drvh [master_driver] RD COMPLETE: ARID=8 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(230) @ 1895: uvm_test_top.envh.m_agenth.monh [master_monitor] MON RD_DATA: ARID=8 beats=5
+# UVM_INFO ../slave_uvc/slave_monitor.sv(199) @ 1895: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON RD_DATA: ARID=8 beats=5
+# UVM_INFO ../tb/score_board.sv(138) @ 1895: uvm_test_top.envh.sb [score_board] READ  compare: ARID=8 ARADDR=0x0000f4b4 ARBURST=0 ARLEN=4
+# UVM_INFO ../tb/score_board.sv(149) @ 1895: uvm_test_top.envh.sb [score_board] READ  MATCH: ARID=8 ARADDR=0x0000f4b4 ARBURST=0
+# UVM_INFO ../master_uvc/master_driver.sv(285) @ 2205: uvm_test_top.envh.m_agenth.drvh [master_driver] RD COMPLETE: ARID=9 freed
+# UVM_INFO ../master_uvc/master_monitor.sv(230) @ 2205: uvm_test_top.envh.m_agenth.monh [master_monitor] MON RD_DATA: ARID=9 beats=7
+# UVM_INFO ../slave_uvc/slave_monitor.sv(199) @ 2205: uvm_test_top.envh.s_agenth.monh [slave_monitor] SLV MON RD_DATA: ARID=9 beats=7
+# UVM_INFO ../tb/score_board.sv(138) @ 2205: uvm_test_top.envh.sb [score_board] READ  compare: ARID=9 ARADDR=0x00001fa3 ARBURST=1 ARLEN=6
+# UVM_INFO ../tb/score_board.sv(149) @ 2205: uvm_test_top.envh.sb [score_board] READ  MATCH: ARID=9 ARADDR=0x00001fa3 ARBURST=1
+# UVM_INFO verilog_src/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 6995: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO ../tb/score_board.sv(197) @ 6995: uvm_test_top.envh.sb [score_board] 
+# 
+# ============================================
+#   AXI VIP SCOREBOARD REPORT
+# ============================================
+#   Write seen      : 0
+#   Write matched   : 0
+#   Write mismatched: 0
+# --------------------------------------------
+#   Read  seen      : 10
+#   Read  matched   : 10
+#   Read  mismatched: 0
+# ============================================
+# 
+# 
+# UVM_INFO ../tb/score_board.sv(215) @ 6995: uvm_test_top.envh.sb [score_board] TEST PASSED – all transactions matched
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :   68
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [Questa UVM]     2
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVMTOP]     1
+# [master_driver]    10
+# [master_monitor]    10
+# [outstanding_read_seq]    10
+# [outstanding_read_v_seq]     1
+# [score_board]    22
+# [slave_monitor]    10
+# ** Note: $finish    : /pkgs/mentor/questa/2024.2/questasim/linux_x86_64/../verilog_src/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 6995 ns  Iteration: 55  Instance: /top
+# Saving coverage database on exit...
+# End time: 23:56:49 on Mar 30,2026, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
